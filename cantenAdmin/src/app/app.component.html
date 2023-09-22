@@ -1,0 +1,103 @@
+<!-- <app-admin-form></app-admin-form> -->
+<!-- <nav class="navbar navbar-expand-sm bg-primary navbar-dark">
+  <div class="container">
+    <a class="navbar-brand" href="#">
+      <img class="logo" src="assets/images/food-logo.png" />
+    </a>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <form class="form-inline my-2 my-lg-0 mr-3">
+        <input
+          class="form-control mr-sm-2"
+          type="search"
+          placeholder="Search Food Item"
+          aria-label="Search"
+        />
+        <button class="btn btn-outline-light my-2 my-sm-0" type="submit">
+          Search
+        </button>
+      </form>
+      <div class="dropdown mr-3">
+        <button
+          class="btn btn-outline-light dropdown-toggle"
+          type="button"
+          id="sortDropdown"
+          data-toggle="dropdown"
+          aria-haspopup="true"
+          aria-expanded="false"
+        >
+          Sort Food Items
+        </button>
+        <div class="dropdown-menu" aria-labelledby="sortDropdown">
+          <a class="dropdown-item" href="#">Sort by Name</a>
+          <a class="dropdown-item" href="#">Sort by Price</a>
+        </div>
+      </div>
+      <a routerLink="addItems" routerLinkActive="active" class="nav-link"
+        > <button class="btn btn-primary mr-3">Add Food Items</button></a
+      >
+     
+    </div>
+    <a class="nav-link" href="#">
+      <i class="fas fa-user"></i>
+    </a>
+  </div>
+</nav> -->
+
+<!-- <ul class="navbar-nav">
+    <li class="nav-item">
+      <a routerLink="items" routerLinkActive="active" class="nav-link"
+        >Food Items List</a
+      >
+    </li>
+    <li class="nav-item">
+      <a routerLink="addItems" routerLinkActive="active" class="nav-link"
+        >Add Food Items</a
+      >
+    </li>
+  </ul> -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+    <div class="container">
+      <a class="navbar-brand" href="#">
+        <img src="assets/images/logo.png" alt="Food Website Logo" class="logo">
+      </a>
+      <div class="navbar-nav flex-grow-1">
+        <form class="form-inline mr-2">
+         
+          <input 
+           #searchInput
+          (keyup)="searchItems($event)" (blur)="hideSearch()" class="form-control mr-sm-2 search-btn" type="search" placeholder="Search Food Item" aria-label="Search">
+          <button (click)="submitSearch(searchInput.value)" class="btn btn-outline-light my-2 my-sm-0 search-btn2" type="submit">Search</button>
+          <ul class="suggested-result" *ngIf="searchResult">
+            <li *ngFor="let item of searchResult">
+              <a>{{item.item_name}} </a>
+            </li>
+          </ul>
+        </form>
+        <div class="dropdown mr-2">
+          <button class="btn btn-outline-light dropdown-toggle sort-btn" type="button" id="sortDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Sort Food Items
+          </button>
+          <div class="dropdown-menu" aria-labelledby="sortDropdown">
+            <a class="dropdown-item" href="#">Sort by Name</a>
+            <a class="dropdown-item" href="#">Sort by Price</a>
+          </div>
+        </div>
+        <a routerLink="addItems" routerLinkActive="active" class="nav-link"
+        ><button class="btn btn-outline-light add-btn">Add Food Items</button></a
+      >
+        
+        <a routerLink="items" routerLinkActive="active" class="nav-link"
+        ><button class="btn btn-outline-light add-btn2">Food Items List</button></a
+      >
+        
+      </div>
+      <div class="navbar-nav">
+        <i class="fas fa-shopping-cart fa-2x"></i>
+        <button class="btn btn-outline-primary">
+          <i class="fas fa-user"></i> Profile
+        </button>
+      </div>
+    </div>
+  </nav>
+
+<router-outlet></router-outlet>

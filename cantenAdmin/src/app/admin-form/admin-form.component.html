@@ -1,0 +1,82 @@
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 col-sm-10 col-md-8 col-sm-offset-1 col-md-offset-2">
+      <h1>Add Food Items</h1>
+
+      <form (ngSubmit)="onSubmit(f)" #f="ngForm">
+        <div id="user-data">
+          <div class="form-group">
+            <label for="foodName">Food Name:</label>
+            <input
+              class="form-control"
+              name="foodName"
+              id="foodName"
+              type="text"
+              placeholder="Enter name of food item"
+              ngModel
+              required
+            />
+          </div>
+          <hr />
+          <div class="category-dropdown">
+            <label for="foodCategory">Food Category:</label>
+            <select
+              class="form-control"
+              id="foodCategory"
+              name="foodCategory"
+              [ngModel]="defaultValue"
+            >
+              <option value="southIndian">South Indian</option>
+              <option value="Pizza">Pizza</option>
+              <option value="Burger">Burger</option>
+              <option value="North">North Indian</option>
+            </select>
+          </div>
+          <hr />
+          <div class="form-group">
+            <label for="foodAmount">Enter Price :</label>
+            <input
+              class="form-control"
+              name="foodAmount"
+              type="text"
+              (keypress)="onlyNumbersAllowed($event)"
+              placeholder="Enter Price of food item"
+            />
+          </div>
+          <hr />
+          <div class="form-group">
+            <label for="foodDescription">Description</label>
+            <textarea
+              class="form-control"
+              rows="5"
+              name="foodDescription"
+              id="foodDescription"
+              ngModel
+              required
+            ></textarea>
+          </div>
+        
+          <div class="form-group">
+            <label for="image">Image Upload: dsa</label>
+        
+  <input
+    type="file"
+    class="form-control"
+    accept="image/*"
+    (change)="onSelectFile($event)"
+    style="height: 100%"
+  />
+            
+          </div>
+          <hr />
+         
+        </div>
+
+        <button class="btn btn-primary" type="submit" [disabled]="!f.valid">
+          Submit
+        </button>
+        <hr />
+      </form>
+    </div>
+  </div>
+</div>
